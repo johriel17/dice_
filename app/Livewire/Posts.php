@@ -21,8 +21,8 @@ class Posts extends Component
     public function render()
     {
 
-        $posts = Post::paginate(10);
-
+        $posts = Post::orderByDesc('id')->paginate(10);
+        
         return view('livewire.posts',[
             'posts' => $posts
         ]);
